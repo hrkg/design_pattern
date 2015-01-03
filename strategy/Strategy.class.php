@@ -6,11 +6,11 @@ abstract class Strategy {
         $this->name = $name;
     }
     
-    public function getData() {
+    public function displayData() {
         if(!is_readable($this->getName())) {
             throw new Exception('name'.$this->getName().'is not readabel!');
         }
-        return $this->readData($this->getName());
+        $this->readData($this->getName());
     }
 
     public function getName() {
