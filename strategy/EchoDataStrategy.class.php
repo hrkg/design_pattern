@@ -1,10 +1,12 @@
 <?php
-require_once 'Strategy.class.php';
+require_once 'AbstractStrategy.class.php';
 
-class EchoDataStrategy extends Strategy {
+// signがecho後は同じ..
+class EchoDataStrategy extends AbstractStrategy {
     protected function readData($name) {
         $fp = fopen($name,'r');
         $dummy = fgets($fp, 4096);
+        // sign
         echo($dummy);
     }
 }

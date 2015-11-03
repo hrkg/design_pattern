@@ -1,10 +1,12 @@
 <?php
-require_once 'Strategy.class.php';
+require_once 'AbstractStrategy.class.php';
 
-class PrintrDataStrategy extends Strategy {
+// signがprint_r()後は同じ..
+class PrintrDataStrategy extends AbstractStrategy {
     protected function readData($name) {
         $fp = fopen($name,'r');
         $dummy = fgets($fp, 4096);
+        // sign
         print_r($dummy);
     }
 }

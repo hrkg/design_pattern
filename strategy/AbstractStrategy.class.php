@@ -1,5 +1,7 @@
 <?php
-abstract class Strategy {
+// 共通処理
+abstract class AbstractStrategy {
+
     private $name;
     
     public function  __construct($name) {
@@ -8,7 +10,7 @@ abstract class Strategy {
     
     public function displayData() {
         if(!is_readable($this->getName())) {
-            throw new Exception('name'.$this->getName().'is not readabel!');
+            throw new Exception('name' . $this->getName() . 'is not readabel!');
         }
         $this->readData($this->getName());
     }
